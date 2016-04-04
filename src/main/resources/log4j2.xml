@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+<Configuration status="INFO"><!-- Only log internal log4j messages 
+		of level {status} or higher to the console -->
+	<Properties>
+		<Property name="serviceName">eureka-tester</Property>
+	</Properties>
+	<Appenders>
+		<!-- The console appender may be uncommented for development purposes, 
+			but do not commit uncommented. Will overwhelm Docker. -->
+		<Console name="ECLIPSE" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+			</PatternLayout>
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="ECLIPSE" level="ALL"/>
+		</Root>
+	</Loggers>
+</Configuration>
